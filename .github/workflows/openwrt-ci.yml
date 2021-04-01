@@ -92,6 +92,14 @@ jobs:
           name: OpenWrt_package
           path: ./artifact/package/
 
+     - name：diythem
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+          git clone https://github.com/Ameykyl/luci-app-koolproxyR
+          git clone https://github.com/rosywrt/luci-theme-rosy
       - name: Deliver firmware
         uses: actions/upload-artifact@v2
         with:
